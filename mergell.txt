@@ -1,0 +1,31 @@
+def mergeLists(head1, head2):
+    p = head1
+    q = head2
+    s = SinglyLinkedListNode(None)
+    newhead = SinglyLinkedListNode(None)
+    if p == None:
+        return q
+    if q == None:
+        return p
+    if p and q:
+        if(p.data < q.data):
+            s = p
+            p = p.next
+        else:
+            s = q
+            q = q.next
+    newhead = s
+    while p and q:
+        if p.data < q.data:
+            s.next = p
+            s = p
+            p = p.next
+        else:
+            s.next = q
+            s = q
+            q = q.next
+    if p == None:
+        s.next = q
+    if q == None:
+        s.next = p
+    return newhead
