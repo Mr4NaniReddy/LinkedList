@@ -90,6 +90,7 @@ public class cat {
 
         return val;
     }
+    
     public Node find(int value){
         Node node = head;
         while(node.next != null){
@@ -126,6 +127,7 @@ public class cat {
         return head;
     }
     public static void main(String[] args) {
+    
      cat list = new cat();
      list.insertFirst(3);
      list.insertFirst(2);
@@ -138,7 +140,5 @@ public class cat {
      list.display();
      System.out.println(list.find(4));
      System.out.println(list.dis());
-     
-
     }
 }
